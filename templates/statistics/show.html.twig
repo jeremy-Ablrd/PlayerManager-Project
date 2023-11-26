@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block body %}
+    <h1>Statistics</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ statistic.id }}</td>
+            </tr>
+            <tr>
+                <th>Victories</th>
+                <td>{{ statistic.victories }}</td>
+            </tr>
+            <tr>
+                <th>Defeats</th>
+                <td>{{ statistic.defeats }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_statistics_index') }}">back to list</a>
+
+    <a href="{{ path('app_statistics_edit', {'id': statistic.id}) }}">edit</a>
+
+    {{ include('statistics/_delete_form.html.twig') }}
+{% endblock %}
